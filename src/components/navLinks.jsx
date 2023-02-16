@@ -1,10 +1,10 @@
 import React from "react";
 
-const NavLink = (props) => {
+const NavLink = ({ href, title, itemClass }) => {
   return (
     <li>
-      <a href={props.linkName} className="nav-link">
-        {props.name}
+      <a href={href} className={itemClass}>
+        {title}
       </a>
     </li>
   );

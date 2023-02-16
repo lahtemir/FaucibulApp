@@ -3,6 +3,7 @@ import heroImg from "../images/hero4.jpg";
 import logo from "../images/logo.png";
 import { HiMenu } from "react-icons/hi";
 import NavLink from "./navLinks";
+import { pageLinks } from "../Data";
 
 function Header() {
   const [isNav, setNav] = useState(true);
@@ -18,9 +19,16 @@ function Header() {
         </button>
 
         <ul className={isNav ? "nav-links" : "hamburgerMenu"}>
-          <NavLink name="HOME" linkName="#home" />
-          <NavLink name="ABOUT" linkName="#about" />
-          <NavLink name="ARTICLES" linkName="#articles" />
+          {pageLinks.map((link) => {
+            return (
+              <NavLink
+                key={link.id}
+                href={link.href}
+                title={link.text}
+                itemClass="nav-link"
+              />
+            );
+          })}
         </ul>
       </nav>
     </header>

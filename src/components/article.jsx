@@ -1,4 +1,5 @@
 import React from "react";
+import { pageLinks } from "../Data";
 
 const Article = (props) => {
   return (

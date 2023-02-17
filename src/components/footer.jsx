@@ -1,24 +1,21 @@
 import React from "react";
+import { pageLinks } from "../Data";
+import NavLink from "./navLinks";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <ul className="footer-links">
-        <li>
-          <a href="#about" className="footer-link">
-            ABOUT
-          </a>
-        </li>
-        <li>
-          <a href="#articles" className="footer-link">
-            ARTICLES
-          </a>
-        </li>
-        <li>
-          <a href="#home" className="footer-link">
-            HOME
-          </a>
-        </li>
+        {pageLinks.map((link) => {
+          return (
+            <NavLink
+              key={link.id}
+              href={link.href}
+              itemClass="footer-link"
+              title={link.text}
+            />
+          );
+        })}
       </ul>
       <p>Copyright © Faucibul {new Date().getFullYear()}</p>
     </footer>

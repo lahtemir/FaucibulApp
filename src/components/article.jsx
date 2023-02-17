@@ -1,13 +1,12 @@
 import React from "react";
-import { pageLinks } from "../Data";
 
-const Article = (props) => {
+const Article = ({ img, alt, title, content }) => {
   return (
     <article className="article">
-      <img src={props.img} alt={props.alt} />
-      <h3>{props.title}</h3>
+      <img src={img} alt={alt} />
+      <h3>{title}</h3>
       <hr />
-      <p>{props.content}</p>
+      <p>{content}</p>
     </article>
   );
 };
